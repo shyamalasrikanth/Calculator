@@ -2,19 +2,23 @@
 package com.onlinecalculator.calculator.calctypes;
 import java.util.Scanner;
 
- class Calc1
+ public class BasicCalc
 {
-	Float a,b,c,res;
-	int d;
+	public int a,b,c,res;
+	public int ch;
 	
 	
-	public void Calc1()
+	public  BasicCalc()
         {
-		
+		a=0;
+		b=0;
+		c=0;
+		ch=0;
+		res=0;
 		
 	}
 	
-	public void menu()
+	public int menu()
         {
       
     	System.out.println("1.addition");
@@ -23,14 +27,10 @@ import java.util.Scanner;
 
         System.out.println("4.divisin");
         System.out.println("*****select option******");
-
-            
-            
+ Scanner s=new Scanner(System.in);
+      ch=s.nextInt();
     	
-  Scanner s=new Scanner(System.in);
-      d=s.nextInt();
-    	
-    	
+    	return 0 ;
     	
 	}
 	
@@ -38,35 +38,35 @@ import java.util.Scanner;
     {
     Scanner s=new Scanner(System.in);
     System.out.println("Enter first  number");
-    	a=s.nextFloat();
+    	a=s.nextInt();
     	System.out.println("Enter second number");
-    	b=s.nextFloat();
+    	b=s.nextInt();
     }
 
     public void performOperation()
 {
-    	switch(d)
+    	switch(ch)
     	{
     	case 1:
-            System.out.println("addition");
+          
             res=add();
-            System.out.println("res" +res);
+            System.out.println("res"+res);
             break;
             
     	case 2:
-            System.out.println("subtraction");
+            
             res=subtract();
             System.out.println("res"+res);
             break;
             
     	case 3:
-            System.out.println("mutiply");
+            
             res=multiply();
             System.out.println("res"+res);
             break;
             
     	case 4:
-            System.out.println("divide");
+            
             res=divide();
             System.out.println("res"+res);
             break;
@@ -74,48 +74,40 @@ import java.util.Scanner;
             
     	}
     	}
-	Float add()
+	int add()
 	{
 		c=a+b;
 		return c;
 	}
 	
-	Float subtract()
+	int subtract()
 	{
 		c=a-b;
 		return c;
 	}
 	
-	Float multiply()
+	int multiply()
 	{
 		c=a*b;
 		return c;
 		
 	}
 	
-	Float divide()
+	int divide()
 	{
 		c=a/b;
 		return c;
 		
 	}
 	
-} 
+
  
- public class BasicCalc
- {
-	 public static void main(String args[])
-	 
-	 {
-		 Calc1 c=new Calc1();
-		 c.menu();
-		 c.userInputs();
-		 c.performOperation();
-	 }
- }
- 
- 
- 
- 
- 
+public static void main(String arg[])
+{
+ BasicCalc calc=new BasicCalc();
+ calc.menu();
+ calc.userInputs();
+ calc.performOperation();
+}
+}
  
